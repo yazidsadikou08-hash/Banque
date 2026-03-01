@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépôt / Retrait</title>
+
+    <!-- Bootstrap CSS local -->
+    <link href="bootstrap.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container my-5">
+    <div class="card shadow p-4">
+        <h3 class="mb-4 text-center">Dépôt / Retrait</h3>
+        <a href="sold du compte.HTML" class="btn btn-outline-light me-2">Compte</a>
+        <!-- Message dynamique -->
+        <div id="messageBox"></div>
+
+        <form id="transactionForm">
+            <div class="mb-3">
+                <label class="form-label">Type</label>
+                <select id="type" class="form-select">
+                    <option value="depot">Dépôt</option>
+                    <option value="retrait">Retrait</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Montant (€)</label>
+                <input type="number" step="0.01" id="amount" class="form-control" required>
+            </div>
+
+            <button class="btn btn-primary w-100">Valider</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS local -->
+<script src="bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("transactionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let type = document.getElementById("type").value;
+    let amount = document.getElementById("amount").value;
+    let messageBox = document.getElementById("messageBox");
+
+    if(amount <= 0){
+        messageBox.innerHTML = `
+            <div class="alert alert-danger">
+                Montant invalide !
+            </div>`;
+        return;
+    }
+
+    if(type === "depot"){
+        messageBox.innerHTML = `
+            <div class="alert alert-success">
+                Dépôt de ${amount} € effectué avec succès.
+            </div>`;
+    } else {
+        messageBox.innerHTML = `
+            <div class="alert alert-warning">
+                Retrait de ${amount} € effectué avec succès.
+            </div>`;
+    }
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

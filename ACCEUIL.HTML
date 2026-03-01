@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banque Sécurisée - Accueil</title>
+
+<!-- Bootstrap CSS -->
+<link href="bootstrap.css" rel="stylesheet">
+
+<style>
+.hero-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+.hero-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#"><h1>Ecobank</h1></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <a href="connexion.HTML" class="btn btn-outline-light me-2">Connexion</a>
+      <a href="inscription.HTML" class="btn btn-light">Inscription</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="container text-center my-5 hero-animate" id="heroSection">
+    <h1 class="display-5 fw-bold">Bienvenue à Ecobank</h1>
+    <p class="lead">La sécurité de vos comptes est notre priorité.</p>
+    <a href="inscription.HTML">
+    <button class="btn btn-primary btn-lg color text-white";>
+      
+        Créer un compte
+       
+    </button>
+     </a>
+</div>
+<br>
+<br>
+<br>
+<!-- Services -->
+<div class="container my-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3 h-100 service-card">
+        <a href="operation.HTML"> <h5>Dépôt / Retrait</a>
+        <p>Effectuez vos dépôts et retraits rapidement.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3 h-100 service-card">
+        <h5>Transferts sécurisés</h5>
+        <p>Envoyez de l'argent à vos proches en toute sécurité.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3 h-100 service-card">
+        <h5>Historique détaillé</h5>
+        <p>Suivez toutes vos transactions facilement.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="infoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Inscription</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <button class="btn btn-secondary">acceuil</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Footer -->
+<footer class="bg-primary text-white text-center py-3">
+    &copy; 2026 <h4>Ecobank</h4>. Tous droits réservés.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="bootstrap.bundle.min.js"></script>
+
+<script>
+// Animation au chargement
+window.addEventListener("load", function() {
+    document.getElementById("heroSection").classList.add("show");
+});
+
+// Animation hover sur cartes
+document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.classList.add("shadow-lg");
+    });
+    card.addEventListener("mouseleave", () => {
+        card.classList.remove("shadow-lg");
+    });
+});
+</script>
+
+</body>
+</html>

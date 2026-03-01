@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfert - Banque</title>
+
+    <!-- Bootstrap CSS LOCAL -->
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body class="bg-light">
+
+<div class="container my-5">
+    <div class="card shadow p-4">
+        <h3 class="mb-4">Transfert d’argent</h3>
+<a href="sold du compte.HTML" class="btn btn-outline-light me-2">Compte</a>
+        <!-- Message dynamique -->
+        <div id="messageBox" class="alert d-none"></div>
+
+        <form id="transferForm">
+            <div class="mb-3">
+                <label class="form-label">Destinataire (ID)</label>
+                <input type="number" id="recipientId" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Montant (€)</label>
+                <input type="number" step="0.01" id="amount" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Envoyer
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS LOCAL -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+const form = document.getElementById("transferForm");
+const messageBox = document.getElementById("messageBox");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let recipient = document.getElementById("recipientId").value;
+    let amount = parseFloat(document.getElementById("amount").value);
+
+    if(amount <= 0){
+        messageBox.className = "alert alert-danger";
+        messageBox.innerText = "Le montant doit être supérieur à 0.";
+        messageBox.classList.remove("d-none");
+        return;
+    }
+
+    messageBox.className = "alert alert-success";
+    messageBox.innerText = "Transfert de " + amount + "€ envoyé au compte #" + recipient + " avec succès.";
+    messageBox.classList.remove("d-none");
+
+    form.reset();
+});
+</script>
+
+</body>
+</html>

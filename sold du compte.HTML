@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte - Banque</title>
+
+    <!-- Bootstrap CSS LOCAL -->
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#"><h2>Ecobank</h2></a>
+    <div>
+      <a href="sold du compte.HTML" class="btn btn-outline-light me-2">Compte</a>
+      <a href="operation.HTML" class="btn btn-outline-light me-2">Dépôt / Retrait</a>
+      <a href="transmoney.HTML" class="btn btn-outline-light me-2">Transfert</a>
+      <button class="btn btn-light" onclick="logout()">Déconnexion</button>
+    </div>
+  </div>
+</nav>
+<br>
+<body class="bg-light">
+
+<div class="container my-5">
+    <div class="card shadow p-4">
+        <h3></h3>
+        <h3 id="numeroCompte">Numéro de compte : AB123</h3>
+        <h4 id="soldeCompte">Solde : 3.000.000 FCFA</h4>
+
+        <button class="btn btn-success mt-3" onclick="crediter()">
+            Créditer +10000FCFA
+        </button>
+    </div>
+</div>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Banque</title>
+
+    <!-- Bootstrap CSS LOCAL -->
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    
+<div class="container my-5">
+    <div class="card shadow p-4">
+        <h2 id="welcomeMessage">Bienvenue, Utilisateur !</h2>
+        <p id="roleMessage">Vous êtes connecté en tant que Client.</p>
+        <p>Utilisez les menus pour gérer votre compte bancaire.</p>
+        <br>
+        <br>
+
+
+<!-- Historique -->
+<h4>Historique</h4>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Type</th>
+<th>Montant</th>
+<th>Destinataire</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dépôt</td>
+<td>1000000FCFA</td>
+<td>KARIM</td>
+<td>01/01/2026</td>
+</tr>
+<tr>
+<td>Transfert</td>
+<td>50000FCFA</td>
+<td>Jean</td>
+<td>02/01/2026</td>
+</tr>
+</tbody>
+</table>
+
+<hr class="my-4">
+
+<p>Token JWT mis à jour :</p>
+<textarea style="width:100%;height:100px;">Votre token apparaîtra ici</textarea>
+
+</div>
+
+</body>
+</html>
+    </div>
+</div>
+
+<!-- Bootstrap JS LOCAL -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Simulation utilisateur (remplace PHP)
+let user = {
+    id: "Yazid",
+    role: "Administrateur"
+};
+
+// Affichage dynamique
+document.getElementById("welcomeMessage").innerText =
+    "Bienvenue, " + user.id + " !";
+
+document.getElementById("roleMessage").innerText =
+    "Vous êtes connecté en tant que " + user.role + ".";
+
+// Déconnexion
+function logout(){
+    localStorage.removeItem("token");
+    window.location.href = "ACCEUIL.html";
+}
+</script>
+
+</body>
+</html>
+
+<!-- Bootstrap JS LOCAL -->
+<script src="bootstrap.bundle.min.js"></script>
+
+<!-- JS simple pour simulation -->
+<script>
+    let solde = 3000000;
+
+    function crediter() {
+        solde += 100000;
+        document.getElementById("soldeCompte").innerText = "Solde : " + solde + " FCFA";
+    }
+</script>
+
+
+</body>
+</html>

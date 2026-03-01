@@ -1,0 +1,83 @@
+>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Banque</title>
+
+    <!-- Bootstrap CSS LOCAL -->
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body class="bg-light">
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h4 class="text-center mb-3">Créer un compte</h4>
+
+        <!-- Message d'information (JS pourra l'afficher dynamiquement si besoin) -->
+        <div id="messageBox" class="alert alert-info d-none"></div>
+
+        <form id="inscriptionForm">
+            <div class="mb-3">
+                <label class="form-label">Nom</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" required>
+            </div>
+
+            <form id="inscriptionForm">
+            <div class="mb-3">
+                <label class="form-label">N°compte</label>
+                <input type="text" class="form-control" required placeholder="Entrez votre NIP">
+            </div>
+
+            <form id="inscriptionForm">
+            <div class="mb-3">
+                <label class="form-label">Motif du compte</label>
+                <input type="text" class="form-control" required placeholder="entrez le motif">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+                S'inscrire et creer un compte
+            </button>
+
+            <br>
+            <br>
+              <a href="sold du compte.HTML" class="btn btn-outline-light me-2">Compte</a>
+        </form>
+    </div>
+</div>
+ <a href="sold du compte1.HTML">
+            <button type="sub" class="btn btn-primary w-100">
+             Acceder au compte 
+            </button>
+             </div>
+            </a>
+<!-- Bootstrap JS LOCAL -->
+<script src="bootstrap.bundle.min.js"></script>
+
+<!-- Petit JS de démonstration -->
+<script>
+    const form = document.getElementById("inscriptionForm");
+    const messageBox = document.getElementById("messageBox");
+    
+
+        form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        messageBox.classList.remove("d-none");
+        messageBox.innerText = "Inscription réussie avec succès ! ";
+       
+    });
+</script>
+
+</body>
+</html>
